@@ -37,7 +37,7 @@ const translations = {
       reasons: [
         {
           title: "Profesionalismo y experiencia",
-          desc: "Más de 15 años brindando soluciones eléctricas seguras y eficientes."
+          desc: "Más de 25 años brindando soluciones eléctricas seguras y eficientes."
         },
         {
           title: "Atención rápida 24/7",
@@ -199,7 +199,7 @@ const translations = {
       reasons: [
         {
           title: "Professionalism and experience",
-          desc: "Over 15 years providing safe and efficient electrical solutions."
+          desc: "Over 25 years providing safe and efficient electrical solutions."
         },
         {
           title: "Fast 24/7 attention",
@@ -342,7 +342,7 @@ const I18nContext = createContext<{
 });
 
 export function I18nProvider({ children }: { children: ReactNode }): JSX.Element {
-  const [lang, setLang] = useState<Lang>("es");
+  const [lang, setLang] = useState<Lang>("en");
   const t = translations[lang];
   return (
     <I18nContext.Provider value={{ lang, setLang, t }}>{children}</I18nContext.Provider>
