@@ -33,12 +33,16 @@ const FAQ: React.FC = () => {
       <div className="max-w-3xl mx-auto divide-y divide-accent/30 min-h-[520px] overflow-hidden relative" style={{ height: 520 }}>
         <div
           className="absolute top-0 left-0 w-full transition-transform duration-700"
-          style={{ transform: `translateY(-${visible[0] * 104}px)` }}
+          style={{ transform: `translateY(-${visible[0] * (window.innerWidth < 640 ? 148 : 104)}px)` }}
         >
           {t.faq.items.map((f, i) => (
-            <div key={i} className="py-4" style={{ height: 104 }}>
-              <h3 className="text-lg font-semibold text-accent mb-1">{f.q}</h3>
-              <p className="text-white/80 dark:text-primary/80">{f.a}</p>
+            <div
+              key={i}
+              className="py-6 sm:py-4 px-2 sm:px-0"
+              style={{ height: window.innerWidth < 640 ? 148 : 104 }}
+            >
+              <h3 className="text-base sm:text-lg font-semibold text-accent mb-2 sm:mb-1">{f.q}</h3>
+              <p className="text-white/80 dark:text-primary/80 text-sm sm:text-base leading-relaxed break-words">{f.a}</p>
             </div>
           ))}
         </div>
