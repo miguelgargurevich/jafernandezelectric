@@ -1,0 +1,98 @@
+🎯 Crea un sitio web profesional para J.A. Fernandez Electric, un negocio de electricistas con más de 25 años de experiencia en Nassau y Suffolk County, Long Island, NY. El sitio debe estar hecho en React 18 + Vite + Tailwind CSS y debe cumplir con los siguientes requerimientos:
+J.A. Fernandez Electric es una empresa eléctrica con más de 25 años de experiencia sirviendo Nassau y Suffolk County, Long Island, NY. Estamos licenciados y asegurados para ofrecer servicios eléctricos comerciales y residenciales de alta calidad.
+
+🧱 Textos a considerar:
+Nuestros servicios incluyen:
+
+- Instalación de nuevos paneles eléctricos
+- Reparaciones generales
+- Mantenimiento preventivo y correctivo
+- Instalación de breaker boxes y entradas de servicio
+- Trabajo interior y exterior
+- Servicios eléctricos subterráneos (cableado enterrado)
+- Aire acondicionado
+- Luminarias y alumbrado
+- Pozos de tierra y servicios trifásicos
+- Certificación eléctrica
+
+Atendemos nuevos y existentes hogares y negocios. Llámanos al (516) 543-2052 de lunes a sábado (8am a 6pm) y domingos solo emergencias.
+
+⸻
+
+🧱 Estructura del sitio
+	1.	Landing Page moderna:
+	•	Hero con logo tipo letras estilizadas JA FERNANDEZ ELECTRIC, nombre y eslogan (“Electricista licenciado en Nassau y Suffolk County”).
+	•	Botón de llamada directa (tel:) y WhatsApp (wa.me/) para contacto rápido.
+	•	Secciones:
+	•	Servicios principales (residencial, comercial, instalaciones, mantenimiento)
+	•	“Quiénes somos” (más de 25 años de experiencia)
+	•	Por qué elegirnos (licencia, seguro, emergencias domingo, cobertura geográfica)
+	•	Testimonios de clientes (falsos si es demo)
+	•	Preguntas frecuentes
+	•	Formulario de contacto (nombre, email, teléfono, mensaje)
+	2.	Página de Servicios Detallados:
+	•	Listado con íconos: Paneles eléctricos, cableado subterráneo, mantenimiento, luminarias, aire acondicionado, pozos de tierra, 3 fases, etc.
+	•	Filtro o tabs para ver servicios por categoría: Comercial / Residencial
+	3.	Footer global con:
+	•	Dirección: 47 Robert Ave Massapequa NY 11758
+	•	Horario: Lunes a sábado 8am–6pm, domingos solo emergencias
+	•	Teléfono
+	•	Redes sociales (si aplica)
+	•	Copyright y año
+
+⸻
+
+🎨 Estilo visual
+	•	Colores:
+	•	#1A1A1A (fondo oscuro profesional)
+	•	#F4A261 (naranja cálido para CTA)
+	•	#FFFFFF (tipografía)
+	•	Tipografía: Poppins o Inter
+	•	Estilo: Profesional, moderno, confiable
+	•	Animaciones: Framer Motion (animaciones suaves al hacer scroll)
+
+⸻
+
+🔒 Funcionalidades adicionales
+	•	Mobile-first (completamente responsive)
+	•	SEO Ready:
+	•	<title> y <meta> por página
+	•	OpenGraph y Twitter Cards
+	•	robots.txt y sitemap.xml
+	•	JSON-LD (servicios y empresa local)
+	•	Accesibilidad (a11y):
+	•	Navegación con teclado
+	•	Etiquetas aria-* y roles semánticos
+	•	Contraste accesible
+	•	Performance:
+	•	Lazy loading de imágenes
+	•	Optimización de fuentes
+	•	Preload de recursos críticos
+
+⸻
+
+💻 Tecnología esperada
+	•	React 18 + Vite
+	•	Tailwind CSS
+	•	Framer Motion
+	•	react-helmet (SEO)
+	•	react-hook-form + zod (formularios)
+	•	EmailJS o FormSubmit para envío de formulario
+	•	GitHub + CI/CD en Vercel
+	•	Lighthouse Score ≥ 90 en todos los rubros
+
+⸻
+
+✍️ Estilo del contenido
+	•	Claro, directo y humano
+	•	Redacción tipo brochure de servicios
+	•	Llamadas a la acción visibles (“Llámanos hoy”, “Cotiza tu instalación”)
+
+⸻
+
+🧠 IA Ready
+	•	Incluir schema.org para tipo “Electrician”, “LocalBusiness”, “Service”
+	•	Estructura semántica para descubrimiento por IA (ChatGPT, Gemini, Bing, etc.)
+	•	Sitemap.xml y robots.txt optimizados
+
+	

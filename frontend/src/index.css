@@ -1,0 +1,10 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  transition: color 0.3s, background 0.3s;
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jafernandez-electric.com/sitemap.xml
