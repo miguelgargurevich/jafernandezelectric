@@ -16,8 +16,8 @@ type FormData = z.infer<ReturnType<typeof getSchema>>;
 
 
 const ContactForm: React.FC = () => {
-  const { t, lang } = useI18n();
-  const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful }, reset } = useForm<FormData>({
+  const { t } = useI18n();
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({
     resolver: zodResolver(getSchema(t)),
   });
 
