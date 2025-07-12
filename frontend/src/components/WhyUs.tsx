@@ -31,7 +31,7 @@ const WhyUs: React.FC = () => {
             transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
           >
             {icons[i]}
-            <h3 className="text-lg font-semibold text-white dark:text-primary mt-3 mb-1">{r.title}</h3>
+            <h3 className="text-lg font-semibold text-white dark:text-primary mt-3 mb-1 text-center">{r.title}</h3>
             <p className="text-white/80 dark:text-primary/80 text-center text-sm">{r.desc}</p>
           </motion.div>
         ))}
