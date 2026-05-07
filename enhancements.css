@@ -166,13 +166,13 @@ html {
 .u-section-1 .u-btn-1 {
   display: inline-flex !important;
   align-items: center;
-  gap: 6px;
-  padding: 11px 26px !important;
+  gap: 8px;
+  padding: 13px 32px !important;
   background: linear-gradient(135deg, #ffa754, #e07800) !important;
   color: #fff !important;
   border-radius: 50px !important;
   font-weight: 700 !important;
-  font-size: 0.98rem !important;
+  font-size: 1.04rem !important;
   letter-spacing: 0.5px;
   transition: transform 0.25s ease, box-shadow 0.25s ease !important;
   box-shadow: 0 4px 20px rgba(255, 138, 0, 0.45);
@@ -234,6 +234,15 @@ html {
   color: #143472;
   padding: 7px 10px;
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ja-proof-strip .ja-proof-item svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 /* ---- About Section (section-2) ---- */
