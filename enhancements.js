@@ -4,16 +4,10 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ---- Sticky Navbar: add .scrolled class on scroll ---- */
+  /* ---- Header fixed behavior disabled: keep regular header ---- */
   var header = document.querySelector('.u-header');
   if (header) {
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 60) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }, { passive: true });
+    header.classList.remove('scrolled');
   }
 
   /* ---- Scroll-triggered animations ---- */

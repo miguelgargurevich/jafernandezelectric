@@ -18,29 +18,45 @@ html {
   transform: translateY(0);
 }
 
-  width: clamp(280px, 86vw, 420px);
-  margin-left: auto;
-  margin-right: auto;
+.ja-fade-left {
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .ja-fade-left.is-visible {
-  gap: 0;
+  opacity: 1;
   transform: translateX(0);
-  will-change: transform;
-  transition: transform 0.55s ease;
+}
+
+.u-header {
   transition: background-color 0.22s ease, box-shadow 0.22s ease;
 }
+
+/* Force regular header behavior (no sticky) */
+.u-header,
+.u-header.u-sticky,
+.u-overlap .u-header.u-sticky {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  z-index: auto !important;
+}
+
+.u-sticky-placeholder,
+.u-sticky-fixed {
+  display: none !important;
+}
+
 .u-header.scrolled {
-  min-width: 100%;
-  max-width: 100%;
+  box-shadow: 0 10px 26px rgba(20, 52, 114, 0.16);
 }
 
 .u-header.scrolled .u-sheet {
-  height: 54px !important;
-  min-height: 54px !important;
-  max-height: 54px !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
@@ -87,9 +103,9 @@ html {
 
 @media (max-width: 767px) {
   .u-header.scrolled .u-sheet {
-    height: 48px !important;
-    min-height: 48px !important;
-    max-height: 48px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
   }
 
   .u-header.scrolled .u-text-1 {
@@ -246,28 +262,50 @@ html {
 
 .ja-benefit-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  max-width: 980px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1080px;
   margin: 26px auto 10px !important;
   padding: 0;
 }
 
 .ja-benefit-list li {
   list-style: none;
-  background: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
   border-radius: 14px;
-  padding: 14px 14px 14px 48px;
+  padding: 16px 14px 14px 52px;
   position: relative;
-  box-shadow: 0 8px 24px rgba(20, 52, 114, 0.08);
+  border: 1px solid #dbe5fb;
+  box-shadow: 0 10px 28px rgba(20, 52, 114, 0.1);
   color: #3f557f;
   line-height: 1.55;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.ja-benefit-list li:hover {
+  transform: translateY(-4px);
+  border-color: #b9ccf5;
+  box-shadow: 0 16px 34px rgba(20, 52, 114, 0.14);
 }
 
 .ja-benefit-list .u-list-icon {
   position: absolute;
   left: 14px;
-  top: 14px;
+  top: 15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #143472, #1f4f99);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(20, 52, 114, 0.2);
+}
+
+.ja-benefit-list .u-list-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .ja-benefit-list li strong {
@@ -275,9 +313,16 @@ html {
   margin-bottom: 3px;
   color: #12336d;
   font-size: 1rem;
+  line-height: 1.3;
 }
 
 @media (max-width: 991px) {
+  .ja-benefit-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
   .ja-benefit-list {
     grid-template-columns: 1fr;
   }
@@ -530,19 +575,30 @@ html {
 }
 
 /* Submit button */
-.u-btn-submit {
-  background: linear-gradient(135deg, #143472, #1e4a8a) !important;
+.u-section-6 .u-form-submit .u-btn.u-btn-submit.u-button-style,
+.u-form .u-btn.u-btn-submit.u-button-style {
+  background-color: #b65100 !important;
+  background-image: linear-gradient(135deg, #c65a00, #8f3d00) !important;
+  border: 1px solid #7f3600 !important;
   border-radius: 50px !important;
   padding: 12px 40px !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
   color: #fff !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-  background-image: none !important;
 }
-.u-btn-submit:hover {
+.u-section-6 .u-form-submit .u-btn.u-btn-submit.u-button-style:hover,
+.u-section-6 .u-form-submit .u-btn.u-btn-submit.u-button-style:focus,
+.u-form .u-btn.u-btn-submit.u-button-style:hover,
+.u-form .u-btn.u-btn-submit.u-button-style:focus {
+  color: #fff !important;
+  background-color: #c55a00 !important;
+  background-image: linear-gradient(135deg, #d46808, #9a4300) !important;
+  border-color: #853900 !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(20, 52, 114, 0.38) !important;
+  box-shadow: 0 10px 30px rgba(143, 61, 0, 0.42) !important;
 }
 
 /* ---- Map section (section-6) ---- */
