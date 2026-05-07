@@ -274,6 +274,11 @@ html {
   padding: 0;
 }
 
+/* Temporary: hide service cards list */
+.ja-benefit-list {
+  display: none !important;
+}
+
 .ja-benefit-list li {
   list-style: none;
   background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
