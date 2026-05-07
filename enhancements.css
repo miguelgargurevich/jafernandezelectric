@@ -18,52 +18,45 @@ html {
   transform: translateY(0);
 }
 
-.ja-fade-left {
+  width: clamp(280px, 86vw, 420px);
+  margin-left: auto;
+  margin-right: auto;
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .ja-fade-left.is-visible {
-  opacity: 1;
+  gap: 0;
   transform: translateX(0);
-}
-
-.ja-fade-right {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.ja-fade-right.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* ---- Sticky Navbar ---- */
-.u-header {
-  position: sticky !important;
-  top: 0;
-  z-index: 1000;
+  will-change: transform;
+  transition: transform 0.55s ease;
   transition: background-color 0.22s ease, box-shadow 0.22s ease;
 }
 .u-header.scrolled {
-  background-color: rgba(14, 30, 65, 0.97) !important;
-  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .u-header.scrolled .u-sheet {
-  min-height: 58px !important;
+  height: 54px !important;
+  min-height: 54px !important;
+  max-height: 54px !important;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .u-header.scrolled .u-text-1 {
   font-size: 1rem !important;
   line-height: 1.1;
-  margin-top: 12px !important;
-  margin-bottom: 12px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .u-header.scrolled .u-menu {
-  margin-top: 8px !important;
-  margin-bottom: 8px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .u-header.scrolled .menu-collapse {
@@ -94,18 +87,20 @@ html {
 
 @media (max-width: 767px) {
   .u-header.scrolled .u-sheet {
-    min-height: 52px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
   }
 
   .u-header.scrolled .u-text-1 {
     font-size: 0.9rem !important;
-    margin-top: 9px !important;
-    margin-bottom: 9px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .u-header.scrolled .u-menu {
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .u-header.scrolled .menu-collapse .u-nav-link {
@@ -229,9 +224,63 @@ html {
   background: linear-gradient(180deg, #f5f8ff 0%, #e8edf8 100%) !important;
 }
 
+.u-section-2 .u-text-1 {
+  max-width: 860px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  color: #102d62;
+}
+
+.u-section-2 .u-text-2 {
+  max-width: 860px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  line-height: 1.75;
+  color: #3a4f78;
+}
+
 /* About section list icon color enhancement */
 .u-section-2 .u-list-icon svg {
   filter: drop-shadow(0 1px 3px rgba(255,167,84,0.4));
+}
+
+.ja-benefit-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 980px;
+  margin: 26px auto 10px !important;
+  padding: 0;
+}
+
+.ja-benefit-list li {
+  list-style: none;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px 14px 14px 48px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(20, 52, 114, 0.08);
+  color: #3f557f;
+  line-height: 1.55;
+}
+
+.ja-benefit-list .u-list-icon {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+}
+
+.ja-benefit-list li strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #12336d;
+  font-size: 1rem;
+}
+
+@media (max-width: 991px) {
+  .ja-benefit-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---- Service Cards (section-3) ---- */
@@ -271,10 +320,20 @@ html {
 
 /* Zoom on card image hover */
 .u-section-3 .u-image-circle {
+  width: 100% !important;
+  height: 190px !important;
+  border-radius: 16px !important;
+  margin: 0 auto 14px !important;
+  background-size: cover !important;
+  background-position: center !important;
   transition: transform 0.45s ease !important;
 }
 .u-section-3 .u-list-item:hover .u-image-circle {
   transform: scale(1.1) !important;
+}
+
+.u-section-3 .u-list-item .u-container-layout {
+  padding-top: 20px !important;
 }
 
 /* Card text */
@@ -353,14 +412,47 @@ html {
   color: #4b5f87;
 }
 
-.ja-testimonials {
+.ja-feedback-marquee {
   margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  overflow: hidden;
+  position: relative;
+  padding: 4px 0;
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
 
-.ja-testimonial-card {
+.ja-feedback-track {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  width: max-content;
+  will-change: transform;
+  animation: jaFeedbackMarquee 28s linear infinite;
+}
+
+.ja-feedback-marquee:hover .ja-feedback-track,
+.ja-feedback-marquee:focus-within .ja-feedback-track,
+.ja-feedback-marquee:active .ja-feedback-track {
+  animation-play-state: paused;
+}
+
+@keyframes jaFeedbackMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 7px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ja-feedback-track {
+    transition: none;
+  }
+}
+
+.ja-feedback-item {
+  min-width: 340px;
+  max-width: 340px;
   background: #fff;
   border-left: 4px solid #ffa754;
   border-radius: 12px;
@@ -369,13 +461,13 @@ html {
   box-shadow: 0 8px 24px rgba(20, 52, 114, 0.08);
 }
 
-.ja-testimonial-card p {
+.ja-feedback-item p {
   margin: 0;
   color: #2d4068;
   line-height: 1.6;
 }
 
-.ja-testimonial-card h4 {
+.ja-feedback-item h4 {
   margin: 10px 0 0;
   color: #143472;
   font-size: 0.95rem;
@@ -710,10 +802,6 @@ html {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ja-testimonials {
-    grid-template-columns: 1fr;
-  }
-
   .ja-service-modal__content {
     grid-template-columns: 1fr;
   }
@@ -732,7 +820,4 @@ html {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ja-testimonials {
-    grid-template-columns: 1fr;
-  }
 }

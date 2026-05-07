@@ -127,6 +127,69 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
+  /* ---- Feedback marquee: 30 cards in 6s continuous loop ---- */
+  var feedbackTrack = document.getElementById('ja-feedback-track');
+  if (feedbackTrack && !feedbackTrack.children.length) {
+    var feedbackSeed = [
+      {
+        quote: '"They upgraded our panel and fixed recurring breaker trips in one visit. Professional, clean, and very fair pricing."',
+        author: 'Maria R. - Massapequa, NY'
+      },
+      {
+        quote: '"We needed urgent electrical work for our shop. J.A. Fernandez delivered fast and got us running without downtime."',
+        author: 'David P. - Farmingdale, NY'
+      },
+      {
+        quote: '"Best electrician we\'ve worked with. Clear communication, code-compliant work, and everything passed inspection first time."',
+        author: 'Laura M. - Wantagh, NY'
+      }
+    ];
+
+    var feedbackItems = [];
+    for (var i = 0; i < 30; i++) {
+      feedbackItems.push(feedbackSeed[i % feedbackSeed.length]);
+    }
+
+    feedbackItems.forEach(function (item) {
+      var card = document.createElement('article');
+      card.className = 'ja-feedback-item';
+
+      var quote = document.createElement('p');
+      quote.textContent = item.quote;
+
+      var author = document.createElement('h4');
+      author.textContent = item.author;
+
+      card.appendChild(quote);
+      card.appendChild(author);
+      feedbackTrack.appendChild(card);
+    });
+
+    var feedbackWrap = feedbackTrack.closest('.ja-feedback-marquee');
+    var currentIndex = 0;
+    var stepWidth = 0;
+
+    function recalcFeedbackWidth() {
+      if (!feedbackWrap) {
+        return;
+      }
+      stepWidth = feedbackWrap.clientWidth;
+      feedbackTrack.style.transform = 'translateX(' + (-currentIndex * stepWidth) + 'px)';
+    }
+
+    function goToNextFeedback() {
+      if (!stepWidth) {
+        recalcFeedbackWidth();
+      }
+      currentIndex = (currentIndex + 1) % feedbackItems.length;
+      feedbackTrack.style.transform = 'translateX(' + (-currentIndex * stepWidth) + 'px)';
+    }
+
+    recalcFeedbackWidth();
+    window.addEventListener('resize', recalcFeedbackWidth);
+    setInterval(goToNextFeedback, 6000);
+  }
+
   /* ---- Service section: clickable cards + sales modal ---- */
   var serviceCards = document.querySelectorAll('.u-section-3 .u-list-item');
   if (serviceCards.length) {
