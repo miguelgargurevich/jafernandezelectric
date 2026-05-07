@@ -267,9 +267,9 @@ html {
 
 .ja-benefit-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 18px;
-  max-width: 1200px;
+  max-width: 980px;
   margin: 26px auto 10px !important;
   padding: 0;
 }
