@@ -1,0 +1,49 @@
+# robots.txt — J.A. Fernandez Electric
+# https://jafernandezelectric.com
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Disallow: /intlTelInput/
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /intlTelInput/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /intlTelInput/
+
+# AI crawlers — explicitly allowed
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+# OpenAI SearchGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+# Claude (Anthropic)
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+# Common Crawl (used by many AI training datasets)
+User-agent: CCBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://jafernandezelectric.com/sitemap.xml

@@ -1,0 +1,324 @@
+/* ============================================
+   JAFernandez Electric — UI Enhancements
+   ============================================ */
+
+/* ---- Smooth scroll ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Scroll animation base states ---- */
+.ja-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.ja-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ja-fade-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.ja-fade-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ja-fade-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.ja-fade-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---- Sticky Navbar ---- */
+.u-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.u-header.scrolled {
+  background-color: rgba(14, 30, 65, 0.97) !important;
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Nav link hover underline accent */
+.u-nav-link {
+  position: relative;
+  transition: color 0.2s ease !important;
+}
+.u-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ffa754;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  transform-origin: center;
+}
+.u-nav-link:hover::after,
+.u-nav-link:focus::after {
+  transform: scaleX(1);
+}
+
+/* ---- Hero Section ---- */
+.u-section-1 {
+  position: relative;
+  background: linear-gradient(135deg, #091b44 0%, #143472 55%, #1b4a9e 100%) !important;
+  overflow: hidden;
+}
+.u-section-1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 65% 50%, rgba(255, 167, 84, 0.09) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hero CTA phone button */
+.u-section-1 .u-btn-1 {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px !important;
+  background: linear-gradient(135deg, #ffa754, #e07800) !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  box-shadow: 0 4px 20px rgba(255, 138, 0, 0.45);
+  background-image: none !important;
+}
+.u-section-1 .u-btn-1:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 32px rgba(255, 138, 0, 0.6);
+}
+
+/* Hero title glow */
+.u-section-1 .u-text-1 {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ---- About Section (section-2) ---- */
+.u-section-2 {
+  background: linear-gradient(180deg, #f5f8ff 0%, #e8edf8 100%) !important;
+}
+
+/* About section list icon color enhancement */
+.u-section-2 .u-list-icon svg {
+  filter: drop-shadow(0 1px 3px rgba(255,167,84,0.4));
+}
+
+/* ---- Service Cards (section-3) ---- */
+.u-section-3 {
+  background: #f9fafb !important;
+}
+
+.u-section-3 .u-list-item {
+  border-radius: 14px !important;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.35s ease !important;
+  overflow: hidden;
+  position: relative;
+}
+.u-section-3 .u-list-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(20, 52, 114, 0.16) !important;
+}
+
+/* Accent gradient top border on hover */
+.u-section-3 .u-list-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #143472, #ffa754);
+  transform: scaleX(0);
+  transition: transform 0.35s ease;
+  transform-origin: left;
+  z-index: 2;
+}
+.u-section-3 .u-list-item:hover::before {
+  transform: scaleX(1);
+}
+
+/* Zoom on card image hover */
+.u-section-3 .u-image-circle {
+  transition: transform 0.45s ease !important;
+}
+.u-section-3 .u-list-item:hover .u-image-circle {
+  transform: scale(1.1) !important;
+}
+
+/* Card text */
+.u-section-3 .u-text-default {
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #1a2e5a !important;
+}
+
+/* Section 3 heading underline */
+.u-section-3 .u-text-1 {
+  position: relative;
+  padding-bottom: 18px;
+}
+.u-section-3 .u-text-1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #143472, #ffa754);
+  border-radius: 2px;
+}
+
+/* ---- Commercial / Residential Cards (section-4) ---- */
+.u-section-4 {
+  background: linear-gradient(180deg, #eef2f8 0%, #dde5f5 100%) !important;
+}
+
+.u-section-4 .u-list-item {
+  border-radius: 16px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.u-section-4 .u-list-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(20, 52, 114, 0.15) !important;
+}
+.u-section-4 .u-icon-circle {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.u-section-4 .u-list-item:hover .u-icon-circle {
+  transform: scale(1.18) rotate(-6deg);
+  box-shadow: 0 6px 20px rgba(20, 52, 114, 0.25);
+}
+
+/* Section 4 description text */
+.u-section-4 .u-text-3 {
+  line-height: 1.75;
+  color: #344770 !important;
+}
+
+/* ---- Contact section (section-5) ---- */
+.u-section-5 {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e4ecff 100%) !important;
+}
+
+/* Contact form inputs */
+.u-form .u-input {
+  border-radius: 8px !important;
+  border-width: 1.5px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.u-form .u-input:focus {
+  border-color: #143472 !important;
+  box-shadow: 0 0 0 3px rgba(20, 52, 114, 0.12) !important;
+  outline: none;
+}
+
+/* Submit button */
+.u-btn-submit {
+  background: linear-gradient(135deg, #143472, #1e4a8a) !important;
+  border-radius: 50px !important;
+  padding: 12px 40px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  color: #fff !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  background-image: none !important;
+}
+.u-btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(20, 52, 114, 0.38) !important;
+}
+
+/* ---- Map section (section-6) ---- */
+.u-section-6 .embed-responsive {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Footer ---- */
+.u-footer {
+  background: linear-gradient(135deg, #0b1a38 0%, #162b54 100%) !important;
+  border-top: 3px solid #ffa754;
+}
+.u-footer .u-text {
+  color: #aec0dc !important;
+}
+.u-footer a {
+  color: #aec0dc;
+  transition: color 0.2s ease;
+}
+.u-footer a:hover {
+  color: #ffa754;
+}
+
+/* ---- Back to top button ---- */
+.u-back-to-top {
+  transition: transform 0.25s ease, opacity 0.25s ease !important;
+}
+.u-back-to-top:hover {
+  transform: translateY(-4px) scale(1.1) !important;
+}
+
+/* ---- Social icons ---- */
+.u-social-icon {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.u-social-icon:hover {
+  transform: scale(1.2) translateY(-2px);
+  filter: brightness(1.2);
+}
+
+/* ---- Contact section heading ---- */
+.u-section-5 .u-text-1 {
+  position: relative;
+  padding-bottom: 16px;
+}
+.u-section-5 .u-text-1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #143472, #ffa754);
+  border-radius: 2px;
+}
+
+/* ---- Section 2 about heading ---- */
+.u-section-2 .u-text-1 {
+  position: relative;
+  padding-bottom: 16px;
+}
+.u-section-2 .u-text-1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #143472, #ffa754);
+  border-radius: 2px;
+}

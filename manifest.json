@@ -1,0 +1,20 @@
+{
+  "name": "J.A. Fernandez Electric",
+  "short_name": "JA Fernandez",
+  "description": "Licensed electrician serving Nassau and Suffolk County, Long Island NY. Commercial & residential electrical services.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#091b44",
+  "theme_color": "#143472",
+  "lang": "en-US",
+  "categories": ["business", "utilities"],
+  "icons": [
+    {
+      "src": "images/LOGOJA.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
